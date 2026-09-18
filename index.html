@@ -3,4 +3,4 @@
 <body><header><a class="brand" href="./">threejs project<span class="dot"></span></a><span class="edition">TEN PAGES / ONE ORBIT</span></header>
 <main id="gallery"><div id="stage" aria-label="마우스에 반응하는 10장의 3D 페이지"></div><div class="intro"><span class="eyebrow">AN OPEN COLLECTION</span><h1>A space for<br><em>what comes next.</em></h1></div><div class="guide"><span id="status" aria-live="polite">마우스로 회전 · 클릭하여 페이지 열기</span><button id="motion" type="button" aria-pressed="false">회전 멈추기</button></div></main>
 <footer><span class="index-label">EXPLORE THE PAGES</span><nav aria-label="페이지 목록" id="page-links"></nav><span class="count">01 — 10</span></footer>
-<script>document.querySelector('#page-links').innerHTML=Array.from({length:10},(_,i)=>`<a href="pages/${i+1}.html" aria-label="${i+1}페이지">${String(i+1).padStart(2,'0')}</a>`).join('');</script><script type="module" src="gallery.js"></script></body></html>
+<script>document.querySelector('#page-links').innerHTML=Array.from({length:10},(_,i)=>`<a href="pages/${i+1}.html" aria-label="${i+1}페이지">${String(i+1).padStart(2,'0')}</a>`).join('');</script><script type="module" src="gallery.js?v=2"></script></body></html>
