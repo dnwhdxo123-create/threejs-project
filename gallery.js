@@ -24,7 +24,7 @@ function pick(){ray.setFromCamera(pointer,camera);return ray.intersectObjects(me
 stage.addEventListener('pointermove',e=>{point(e);if(down&&e.pointerType!=='mouse'){const delta=e.clientX-down.last;angle+=delta*.006;down.last=e.clientX;}});
 stage.addEventListener('pointerleave',()=>{pointer.set(9,9);targetX=targetY=0;});
 stage.addEventListener('pointerdown',e=>{point(e);down={x:e.clientX,y:e.clientY,last:e.clientX,index:pick()};});
-stage.addEventListener('pointerup',e=>{if(down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)<10&&down.index!==null)location.href=`pages/${down.index+1}.html`;down=null;});stage.addEventListener('pointercancel',()=>down=null);
+stage.addEventListener('pointerup',e=>{if(down&&Math.hypot(e.clientX-down.x,e.clientY-down.y)<10&&down.index!==null)location.href=`pages/${down.index+1}.html?v=4`;down=null;});stage.addEventListener('pointercancel',()=>down=null);
 function frame(ms){requestAnimationFrame(frame);if(document.hidden)return;const dt=Math.min((ms-lastTime)/1000,.05);lastTime=ms;if(!paused&&!down)angle+=dt*.32;
 orbit.rotation.y=angle;orbit.rotation.x=THREE.MathUtils.damp(orbit.rotation.x,targetY*.055,3,dt);
 cards.forEach((c,i)=>{const a=i/10*Math.PI*2; c.position.set(Math.sin(a)*3.35,Math.sin(ms*.0005+i)*.055,Math.cos(a)*3.35);c.rotation.y=a;c.rotation.z=Math.sin(i*2)*.07;
